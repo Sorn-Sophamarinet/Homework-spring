@@ -59,7 +59,6 @@ public class CustomerServiceImpl implements CustomerService {
         Segment segment = segmentRepository
                 .findByCustomerSegmentId(createCustomerRequest.segmentId());
 
-        // Construct Customer
         Customer customer = new Customer();
         customer.setFullName(createCustomerRequest.fullName());
         customer.setSegment(segment);

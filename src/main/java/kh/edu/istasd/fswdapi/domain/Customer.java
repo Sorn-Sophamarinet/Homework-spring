@@ -24,7 +24,7 @@ public class Customer {
     @Column(nullable = false)
     private String fullName;
 
-    @Column(nullable = false,unique = true)
+    @Column(unique = true)
     private String nationalCardId;
 
     @Column(length = 15,nullable = false)

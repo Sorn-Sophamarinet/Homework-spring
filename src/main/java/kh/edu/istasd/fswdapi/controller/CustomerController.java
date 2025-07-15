@@ -18,6 +18,12 @@ import java.util.List;
 public class CustomerController {
     private final CustomerService customerService;
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{phoneNumber}")
+    public void disableByPhoneNumber(@PathVariable String phoneNumber) {
+        customerService.disableByPhoneNumber(phoneNumber);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public CustomerResponse createCustomer(@RequestBody CreateCustomerRequest createCustomerRequest) {
@@ -37,10 +43,6 @@ public class CustomerController {
     public void deleteCustomerById(@RequestParam Integer id) {
         customerService.deleteCustomerById(id);
     }
-//    @PatchMapping("/{id}")
-//    public CustomerResponse updateCustomerById( @PathVariable Integer id, @RequestBody CreateCustomerRequest createCustomerRequest) {
-//        return customerService.updateCustomerById(id, createCustomerRequest);
-//    }
     @ResponseStatus(HttpStatus.OK)
     @PatchMapping("/{phoneNumber}")
     public CustomerResponse updateCustomerByPhoneNumber(@PathVariable String phoneNumber, @RequestBody UpdateCustomerRequest updateCustomerRequest) {
@@ -57,4 +59,5 @@ public class CustomerController {
         customerService.deleteCustomerByPhoneNumber(phoneNumber);
 
     }
+
 }

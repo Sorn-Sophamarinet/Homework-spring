@@ -4,14 +4,16 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
+@ToString
 @Setter
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "accounts") // you can table name by change this name on @Table
+@Table(name = "accounts")
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Account {
     @Column(nullable = false, unique = true,length = 32 )
     private String accountNumber;
 
-    @ManyToOne  // many account have can name one AccountType
+    @ManyToOne
     @JoinColumn(name = "accountType_id")
     private AccountType accountType;
 
@@ -33,12 +35,14 @@ public class Account {
     @Column(nullable = false)
     private Boolean isDeleted;
 
-    //take customer id(primary) as primary key of Account id
-    @ManyToOne    //Many account is controlled by only one Customer
-    @JoinColumn(name = "customer_id") //
-                                  // name is used to custom column name of relation
-                                  //referencedColumnName one customer field
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "segment_id")
+    private Segment segment;
 
     @OneToMany(mappedBy = "sender")
     private List<Transaction> sentTransactions;

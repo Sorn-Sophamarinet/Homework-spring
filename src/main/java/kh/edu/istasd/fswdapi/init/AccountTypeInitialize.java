@@ -18,13 +18,13 @@ public class AccountTypeInitialize {
     public void init() {
         if (accountTypeRepository.count() == 0) {
             AccountType payroll = new AccountType();
-            payroll.setType("PAYROLL");
+            payroll.setName("PAYROLL");
 
             AccountType saving = new AccountType();
-            saving.setType("SAVING");
+            saving.setName("SAVING");
 
             AccountType junior = new AccountType();
-            junior.setType("JUNIOR");
+            junior.setName("JUNIOR");
 
             accountTypeRepository.saveAll(List.of(payroll, saving, junior));
         }

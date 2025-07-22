@@ -26,16 +26,13 @@ public class AccountType {
     @Column(nullable = false)
     private boolean isActive;
 
-    @Column(nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
     private LocalDateTime updatedAt;
 
 
     @OneToMany(mappedBy = "accountType")
     private List<Account> account; //one only saving can have only one account
 
-    private String type;
 
 }

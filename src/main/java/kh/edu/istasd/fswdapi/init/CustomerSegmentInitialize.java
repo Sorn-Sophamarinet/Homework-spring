@@ -1,5 +1,7 @@
 package kh.edu.istasd.fswdapi.init;
 
+
+
 import jakarta.annotation.PostConstruct;
 import kh.edu.istasd.fswdapi.domain.Segment;
 import kh.edu.istasd.fswdapi.repository.SegmentRepository;
@@ -19,19 +21,19 @@ public class CustomerSegmentInitialize {
 
         if (customerSegmentRepository.count() == 0) {
             Segment segmentRegular = new Segment();
-            segmentRegular.setSegment("REGULAR");
+            segmentRegular.setSegmentName("REGULAR");
             segmentRegular.setDescription("REGULAR");
-            segmentRegular.setIsDeleted(false);
+            segmentRegular.setDeleted(false);
 
             Segment segmentSilver = new Segment();
-            segmentSilver.setSegment("SILVER");
+            segmentSilver.setSegmentName("SILVER");
             segmentSilver.setDescription("SILVER");
-            segmentSilver.setIsDeleted(false);
+            segmentSilver.setDeleted(false);
 
             Segment segmentGold = new Segment();
-            segmentGold.setSegment("GOLD");
+            segmentGold.setSegmentName("GOLD");
             segmentGold.setDescription("GOLD");
-            segmentGold.setIsDeleted(false);
+            segmentGold.setDeleted(false);
 
             customerSegmentRepository.saveAll(
                     List.of(segmentRegular, segmentSilver, segmentGold)

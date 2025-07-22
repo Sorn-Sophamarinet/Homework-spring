@@ -22,7 +22,8 @@ public class Segment {
     @NotBlank(message = "segment name is required")
     private String segmentName;
 
-    private Integer benefit;
+
+    private String description;
     private boolean isDeleted;
 
     @OneToMany(mappedBy = "segment")
@@ -31,13 +32,4 @@ public class Segment {
     @OneToMany(mappedBy = "segment")
     private List<Account > accounts;
 
-    public void setSegment(String regular) {
-    }
-
-    public void setDescription(String silver) {
-    }
-
-    public void setIsDeleted(boolean b) {
-
-    }
 }

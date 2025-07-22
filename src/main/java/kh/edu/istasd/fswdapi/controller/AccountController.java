@@ -55,6 +55,6 @@ public class AccountController {
 
     @PatchMapping("/disable/{accountNumber}")
     public AccountResponse disableAccountByAccountNumber(@PathVariable String accountNumber, @RequestBody DisableAccount disableAccount) {
-       return accountService.disableAccountByAccountNumber(accountNumber,disableAccount.is_deleted());
+        return accountService.disableAccountByAccountNumber(accountNumber,disableAccount.is_deleted());
     }
 }

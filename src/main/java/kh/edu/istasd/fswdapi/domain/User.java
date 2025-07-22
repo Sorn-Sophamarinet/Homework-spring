@@ -27,9 +27,6 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private Boolean isDeleted;
-
-    @Column(nullable = false)
     private Boolean isEnabled;
 
     @ManyToMany(fetch = FetchType.EAGER)

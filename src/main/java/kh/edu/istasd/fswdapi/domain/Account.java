@@ -23,7 +23,7 @@ public class Account {
     private String accountNumber;
 
     @ManyToOne
-    @JoinColumn(name = "accountType_id")
+    @JoinColumn(name = "account_type_id")
     private AccountType accountType;
 
     @Column(nullable = false,length = 50)

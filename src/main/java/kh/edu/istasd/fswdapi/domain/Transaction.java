@@ -24,7 +24,7 @@ public class Transaction {
     private Account receiver;
 
     @ManyToOne
-    @JoinColumn(name = "tranType_id")
+    @JoinColumn(name = "tran_type_id")
     private TransactionType transactionType;
 
 

@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @RequiredArgsConstructor
 @Entity
-@Table(name = "segment")
+@Table(name = "customer_segment")
 public class Segment {
 
     @Id
@@ -31,4 +31,13 @@ public class Segment {
     @OneToMany(mappedBy = "segment")
     private List<Account > accounts;
 
+    public void setSegment(String regular) {
+    }
+
+    public void setDescription(String silver) {
+    }
+
+    public void setIsDeleted(boolean b) {
+
+    }
 }

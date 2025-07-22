@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "accountType")
+@Table(name = "account_type")
 @Setter
 @Getter
 public class AccountType {
@@ -35,4 +35,7 @@ public class AccountType {
 
     @OneToMany(mappedBy = "accountType")
     private List<Account> account; //one only saving can have only one account
+
+    private String type;
+
 }

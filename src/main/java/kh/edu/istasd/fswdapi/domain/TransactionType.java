@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "transactionTypes")
+@Table(name = "transaction_types")
 public class TransactionType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
